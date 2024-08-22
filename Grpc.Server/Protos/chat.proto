@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc.Server.Protos";
+
+service ChatService {
+  // streaming bidirecional
+  rpc Chat (stream ChatMessage) returns (stream ChatMessage);
+}
+
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+}

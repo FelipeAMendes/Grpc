@@ -12,6 +12,7 @@ builder.Services.AddScoped<ITaskItemRepository, TaskItemRepository>();
 var app = builder.Build();
 
 app.MapGrpcService<TaskService>();
+app.MapGrpcService<ChatService>();
 app.MapGet("/", () => "Hey!!");
 
 app.Run();
